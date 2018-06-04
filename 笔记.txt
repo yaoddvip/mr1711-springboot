@@ -1,0 +1,26 @@
+项目介绍：
+    1：该项目中创建了springboot的项目；
+
+    2：整合了mybatis查询数据库的连接：
+        #数据源连接
+        spring.datasource.druid.username=root
+        spring.datasource.druid.password=root
+        spring.datasource.druid.url=jdbc:mysql:///test
+        spring.datasource.druid.driver-class-name=com.mysql.jdbc.Driver
+        spring.datasource.druid.initial-size=5
+
+        #打印sql语句
+        logging.level.com.mr.mapper=debug
+
+        在pom文件中添加插件，否则不能扫描到.xml文件。
+
+    3：整合了redis
+        #--------redis-------------
+        spring.redis.host=127.0.0.1
+        spring.redis.port=6379
+
+        添加redis的工具类。RedisUtil
+
+    4：前台使用freemarker模板引擎
+
+    5：配置文件的执行顺序

@@ -4,7 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * Created by ydd on 2018/5/30.
@@ -17,7 +17,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @SpringBootApplication
 @MapperScan("com.mr.mapper")
-@EnableCaching  //开启redis注解
+@EnableCaching  //开启 redis 注解
+@EnableSwagger2 //开启swagger2
 public class AppConfig {
 
     public static void main(String[] args) {

@@ -1,7 +1,10 @@
 package com.mr.controller;
 
 import com.mr.model.User;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Created by ydd on 2018/6/4.
@@ -9,41 +12,38 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class ClientController {
 
-    @RequestMapping("client/test1")
+
+    @GetMapping("/client/test1")
     public String test1(){
-        System.out.println("client--test1方法被调用...");
+        System.out.println("test1方法被调用！");
         return "success";
     }
 
-    @GetMapping("client/test2")
-    public String test2(User user){
+    @GetMapping("/client/test2")
+    public String test2(String name , Integer age){
+        System.out.println(name+"------"+age);
+        System.out.println("test2方法被调用！");
+        return "success";
+    }
+
+    @PostMapping("/client/test3")
+    public String test3(User user){
         System.out.println(user);
-        System.out.println("client--test1方法被调用...");
+        System.out.println("test3方法被调用！");
         return "success";
     }
 
-    @GetMapping("client/test3")
-    public User test3(User user){
-        user.setName("李四");
-        user.setAge(18);
+    @PostMapping("/client/test4")
+    public User test3(){
+        //模拟查询
+        User user = new User();
         user.setId(1);
-        System.out.println("client--test1方法被调用...");
+        user.setName("张三");
+        user.setAge(19);
+
+        System.out.println("test4方法被调用！");
         return user;
     }
 
-    @PostMapping("client/test4")
-    public User test4(User user){
-        user.setName("李四");
-        user.setAge(18);
-        user.setId(2);
-        System.out.println("client--test4方法被调用...");
-        return user;
-    }
 
-    @PostMapping("client/test5")
-    public String test5(User user){
-        System.out.println(user);
-        System.out.println("client--test5方法被调用...");
-        return "success";
-    }
 }

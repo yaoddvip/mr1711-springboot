@@ -1,8 +1,11 @@
 package com.mr.model;
 
+
 import java.io.Serializable;
 
 public class User implements Serializable{
+
+    private static final long serialVersionUID = -551055704778942717L;
     private Integer id;
 
     private String name;
